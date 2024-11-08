@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Página Interactiva</title>
+     <!-- Bootstrap CSS -->
+     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+     <!-- Librería de íconos de Bootstrap -->
+     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+    <!-- Bootstrap 5 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <link rel="icon" sizes="16x16" href="img/logo.png">
+    <link rel="icon" sizes="32x32" href="img/logo.png">
+    <link rel="icon" sizes="48x48" href="img/logo.png">
+    <!-- O icono con resolución para dispositivos Retina -->
+    <link rel="icon" sizes="64x64" href="img/logo.png">
+
+    <style>
+        /* Sección de bienvenida interactiva */
+        .welcome-section {
+            background: linear-gradient(135deg, #daa457, #00e0fe);;
+            color: white;
+            padding: 100px 20px;
+            text-align: center;
+            animation: fadeIn 2s ease-in-out;
+        }
+
+        .welcome-section h1 {
+            font-size: 3rem;
+            animation: slideUp 2s ease-out;
+            color: #FF7F50;
+        }
+
+        .welcome-section p {
+            color: #000;
+
+        }
+
+        @keyframes fadeIn {
+            0% { opacity: 0; }
+            100% { opacity: 1; }
+        }
+
+        @keyframes slideUp {
+            0% { transform: translateY(20px); opacity: 0; }
+            100% { transform: translateY(0); opacity: 1; }
+        }
+
+        /* Historia visual */
+        .timeline-section {
+            padding: 60px 20px;
+            background: #fff;
+        }
+
+        .timeline-item {
+            margin-bottom: 50px;
+            padding-left: 30px;
+            position: relative;
+            animation: fadeInRight 2s ease-out;
+        }
+
+        .timeline-item h3 {
+            font-size: 1.5rem;
+            color: #FF7F50;
+        }
+
+        .timeline-item p {
+            font-size: 1.1rem;
+        }
+
+
+        @keyframes fadeInRight {
+            0% { opacity: 0; transform: translateX(30px); }
+            100% { opacity: 1; transform: translateX(0); }
+        }
+
+        /* Sección de Servicios/Productos con Hover Efectos */
+        .services-section {
+            padding: 60px 20px;
+            background: #fff;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+        }
+
+        .service-card {
+            background: linear-gradient(135deg, #daa457, #00e0fe);;
+            color: #000000;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease, background-color 0.3s ease;
+            text-align: center;
+        }
+
+        .service-card:hover {
+            transform: scale(1.1);
+            background-color: #f5f5f5;
+        }
+
+        .service-card h3 {
+            font-size: 1.4rem;
+            margin-bottom: 20px;
+        }
+
+        .service-card p {
+            font-size: 1.1rem;
+        }
+
+        /* Sección de Portfolio Animado */
+        .portfolio-section {
+            padding: 60px 20px;
+            background: #fff;
+        }
+
+        .portfolio-item {
+            position: relative;
+            background-color: #fff;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            overflow: hidden;
+            margin-bottom: 30px;
+            transition: transform 0.3s ease;
+        }
+
+        .portfolio-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: opacity 0.3s ease;
+        }
+
+        .portfolio-item:hover {
+            transform: scale(1.05);
+        }
+
+        .portfolio-item:hover img {
+            opacity: 0.8;
+        }
+
+        .portfolio-item .overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.4);
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .portfolio-item:hover .overlay {
+            opacity: 1;
+        }
+
+        .adoption-form-container {
+            background: #fff;
+            padding: 50px 0;
+        }
+
+        .btn-danger {
+            background-color: #ff6f61;
+            border: none;
+            background: linear-gradient(135deg, #00e0fe, #daa457);
+            font-size: 16px;
+            transition: background-color 0.3s ease;
+        }
+
+        .btn-danger:hover {
+            background-color: #e85c52;
+        }
+
+        .form-control {
+            border: 2px solid #ddd;
+            font-size: 16px;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        h2 {
+            font-family: 'Poppins', sans-serif;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Sección de bienvenida -->
+    <section class="welcome-section">
+        <h1>¡Dales un Hogar!</h1>
+        <p>"Un corazón vacío espera por ti, adopta un amigo fiel.</p>
+    </section>
+
+    <!-- Sección de Historia Visual -->
+    <section class="timeline-section text-center">
+        <div class="timeline-item">
+            <h3>Explora y Conoce a Nuestros Animales</h3>
+            <p>Navega por nuestra página y conoce a los adorables animales que están buscando un hogar. Filtra por tipo de animal, tamaño, edad o personalidad.</p>
+        </div>
+        <div class="timeline-item">
+            <h3>Elige al Animal que Te Enamore</h3>
+            <p>Examina los perfiles de los animales. Lee sobre su historia, personalidad y necesidades. Encuentra el que sea el compañero perfecto para ti.</p>
+        </div>
+        <div class="timeline-item">
+            <h3>Formulario de Adopción</h3>
+            <p>Completa nuestro formulario de adopción para contarnos un poco sobre ti, tu hogar y tus expectativas como adoptante.</p>
+        </div>
+        <div class="timeline-item">
+            <h3>Entrevista Virtual o Presencial</h3>
+            <p>endrás una entrevista con uno de nuestros voluntarios para asegurarnos de que el animal será el adecuado para tu hogar y estilo de vida.</p>
+        </div>
+        <div class="timeline-item">
+            <h3>Aprobación de la Adopción</h3>
+            <p>Tras la evaluación y la visita, si todo está bien, aprobaremos la adopción de tu nuevo amigo.</p>
+        </div>
+        <div class="timeline-item">
+            <h3>Bienvenida a Casa</h3>
+            <p>¡Es hora de darles la bienvenida a su nuevo hogar! Empieza la aventura con tu nuevo amigo peludo.</p>
+        </div>
+        
+    </section>
+
+    <!-- Sección de Servicios -->
+    <section class="services-section">
+        <div class="service-card">
+            <h3>Adopta, no compres</h3>
+            <p>Adoptar es una forma responsable y humana de obtener una mascota.</p>
+        </div>
+        <div class="service-card">
+            <h3>Cambio de vida garantizado</h3>
+            <p>la adopción transforma la vida tanto del animal como de la persona que lo acoge, creando una relación única y especial.</p>
+        </div>
+        <div class="service-card">
+            <h3>Tu apoyo hace la diferencia</h3>
+            <p>cada adopción no solo cambia la vida de un animal, sino que también apoya al refugio en su misión de salvar más vidas.</p>
+        </div>
+    </section>
+
+    <!-- Sección de Portfolio -->
+    <section class="portfolio-section">
+        <div class="portfolio-item">
+            <img src="img/banner.jpg" alt="Proyecto 1">
+            <div class="overlay">El amor los salva</div>
+        </div>
+        <div class="portfolio-item">
+            <img src="img/banner1.jpg" alt="Proyecto 2">
+            <div class="overlay">Llevate a tu priximo mejor amigo</div>
+        </div>
+        <div class="portfolio-item">
+            <img src="img/banner2.jpg" alt="Proyecto 3">
+            <div class="overlay">Ven y adopta</div>
+        </div>
+    </section>
+
+    <section class="adoption-form-container">
+        <div class="container">
+          <h2 class="text-center mb-4" style="color: #1e3d58;">Formulario de Adopción</h2>
+          <p class="text-center mb-4" style="color: #ff6f61;">¡Estamos emocionados de que quieras darle un hogar a un animalito! Por favor, completa el siguiente formulario.</p>
+      
+          <form action="/submit-adoption" method="POST">
+            <!-- Información Personal -->
+            <div class="form-group">
+              <label for="name" style="color: #1e3d58;">Tu Nombre Completo</label>
+              <input type="text" class="form-control" id="name" name="name" required placeholder="Tu Nombre Completo" style="border-radius: 10px;">
+            </div>
+      
+            <div class="form-group">
+              <label for="email" style="color: #1e3d58;">Correo Electrónico</label>
+              <input type="email" class="form-control" id="email" name="email" required placeholder="Tu Correo Electrónico" style="border-radius: 10px;">
+            </div>
+      
+            <div class="form-group">
+              <label for="phone" style="color: #1e3d58;">Número de Teléfono</label>
+              <input type="tel" class="form-control" id="phone" name="phone" required placeholder="Tu Número de Teléfono" style="border-radius: 10px;">
+            </div>
+      
+            <!-- Información del Hogar -->
+            <div class="form-group">
+              <label for="home-type" style="color: #1e3d58;">¿Tienes un hogar con jardín?</label>
+              <select class="form-control" id="home-type" name="home-type" required style="border-radius: 10px;">
+                <option value="yes">Sí</option>
+                <option value="no">No</option>
+              </select>
+            </div>
+      
+            <div class="form-group">
+              <label for="other-pets" style="color: #1e3d58;">¿Tienes otros animales en casa?</label>
+              <select class="form-control" id="other-pets" name="other-pets" required style="border-radius: 10px;">
+                <option value="yes">Sí</option>
+                <option value="no">No</option>
+              </select>
+            </div>
+      
+            <!-- Preferencia de Adopción -->
+            <div class="form-group">
+              <label for="preferred-animal" style="color: #1e3d58;">¿Qué tipo de animal te gustaría adoptar?</label>
+              <select class="form-control" id="preferred-animal" name="preferred-animal" required style="border-radius: 10px;">
+                <option value="dog">Perro</option>
+                <option value="cat">Gato</option>
+                <option value="both">Ambos</option>
+              </select>
+            </div>
+      
+            <div class="form-group">
+              <label for="preferred-size" style="color: #1e3d58;">¿Qué tamaño de animal prefieres?</label>
+              <select class="form-control" id="preferred-size" name="preferred-size" required style="border-radius: 10px;">
+                <option value="small">Pequeño</option>
+                <option value="medium">Mediano</option>
+                <option value="large">Grande</option>
+              </select>
+            </div>
+      
+            <!-- Información Adicional -->
+            <div class="form-group">
+              <label for="message" style="color: #1e3d58;">¿Hay algo más que deberíamos saber?</label>
+              <textarea class="form-control" id="message" name="message" rows="4" placeholder="Cuéntanos más sobre ti o tus expectativas para la adopción." style="border-radius: 10px;"></textarea>
+            </div>
+      
+            <!-- Botón de Enviar -->
+            <div class="form-group text-center">
+                <a href="Form.html" class="btn btn-danger" style="border-radius: 20px; padding: 10px 30px;">Enviar Solicitud</a>
+            </div>              
+          </form>
+        </div>
+    </section>
+
+</body>
+</html>
+

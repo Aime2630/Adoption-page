@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Página de Preguntas Frecuentes</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    
+    <link rel="icon" sizes="16x16" href="img/logo.png">
+    <link rel="icon" sizes="32x32" href="img/logo.png">
+    <link rel="icon" sizes="48x48" href="img/logo.png">
+    <link rel="icon" sizes="64x64" href="img/logo.png">
+
+
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            margin: 0;
+            padding: 0;
+            transition: background 0.3s ease, color 0.3s ease;
+        }
+
+        h1, h2 {
+            color: #333;
+        }
+
+        /* Estilo del fondo y la estructura */
+        .faq-container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 50px 0;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
+
+        .faq-card {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 15px 0;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .faq-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .faq-card h2 {
+            font-size: 1.5rem;
+            color: #444;
+        }
+
+        .faq-card p {
+            font-size: 1rem;
+            color: #666;
+        }
+
+        /* Modo oscuro */
+        body.dark-mode {
+            background-color: #20212c;
+            color: #fff;
+        }
+
+        body.dark-mode .faq-card {
+            background-color: #333;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        body.dark-mode .faq-card h2 {
+            color: #00e0fe;
+        }
+
+        body.dark-mode .faq-card p {
+            color: #bbb;
+        }
+
+        /* Estilo del botón de modo oscuro */
+        .floating-button {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background: linear-gradient(135deg, #daa457, #00e0fe);
+            color: #fff;
+            border: none;
+            border-radius: 50px;
+            padding: 15px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            z-index: 1000;
+        }
+
+        .floating-button:hover {
+            background: linear-gradient(135deg, #daa457, #00e0fe);
+        }
+
+        /* Estilo para los iframe (YouTube y Google Maps) */
+        .iframe-container {
+            margin-top: 40px;
+            display: flex;
+            justify-content: space-between;
+            gap: 20px;
+        }
+
+        iframe {
+            width: 48%;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Responsividad para iframe */
+        @media (max-width: 768px) {
+            .iframe-container {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            iframe {
+                width: 90%;
+                margin-bottom: 20px;
+            }
+        }
+/* Estilos básicos del footer */
+footer {
+    background: linear-gradient(to right, #00e0fe, #edb356);
+    color: #fff;
+    width: 100%;
+    padding: 20px;
+    text-align: center;
+    position: fixed; /* Fija el footer */
+    bottom: 0; /* Lo coloca en la parte inferior */
+    left: 0; /* Alinea el footer a la izquierda */
+}
+
+/* Estilos básicos del footer */
+footer {
+    background: linear-gradient(to right, #00e0fe, #edb356);
+    color: #fff;
+    width: 100%;
+    padding: 20px;
+    text-align: center;
+    position:static; 
+    bottom: 0; 
+    left: 0; 
+}
+
+footer a {
+    color: #fff;
+    text-decoration: none;
+}
+
+footer a:hover {
+    color: #ddd; 
+}
+
+    </style>
+</head>
+<body>
+    <!-- Contenedor de la página de preguntas frecuentes -->
+    <div class="faq-container">
+        <h1 class="section-title">Preguntas Frecuentes</h1>
+        
+        <!-- Tarjeta 1 -->
+        <div class="faq-card">
+            <h2>¿Cómo puedo adoptar una mascota del refugio?</h2>
+            <p>Para adoptar una mascota, puedes visitar nuestro refugio o llenar una solicitud en línea. Después de revisar tu solicitud, nos pondremos en contacto contigo para coordinar una visita y una entrevista.</p>
+        </div>
+
+        <!-- Tarjeta 2 -->
+        <div class="faq-card">
+            <h2>¿Hay requisitos específicos para adoptar una mascota?</h2>
+            <p>Sí, requerimos que los adoptantes sean mayores de 18 años, tengan un hogar adecuado para el animal y estén dispuestos a proporcionar atención veterinaria, comida y cariño.</p>
+        </div>
+
+        <!-- Tarjeta 3 -->
+        <div class="faq-card">
+            <h2>¿Cómo puedo ayudar al refugio si no puedo adoptar una mascota?</h2>
+            <p>Agradecemos cualquier tipo de ayuda, desde donaciones de dinero, alimentos, y suministros, hasta el voluntariado para cuidar a los animales o ayudarnos con eventos.</p>
+        </div>
+
+        <!-- Tarjeta 4 -->
+        <div class="faq-card">
+            <h2>¿Cómo puedo ser voluntario en el refugio?</h2>
+            <p>Si estás interesado en ser voluntario, puedes completar nuestra solicitud de voluntariado en línea o visitar el refugio para obtener más información sobre los requisitos y las oportunidades disponibles.</p>
+        </div>
+
+        <!-- Sección de iframe -->
+        <div class="iframe-container">
+            <!-- YouTube iframe -->
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/Gl5ByyiMuKg" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            <!-- Google Maps iframe -->
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3783.970933307529!2d-69.95092807557026!3d18.484975770262075!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8eaf89f362e578d3%3A0x19d59fe09af95898!2sUniversidad%20Nacional%20Pedro%20Henr%C3%ADquez%20Ure%C3%B1a%20(UNPHU)!5e0!3m2!1ses!2sdo!4v1730919757318!5m2!1ses!2sdo" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>        </div>
+    </div>
+
+    <!--footer-->
+    <footer class="py-4">
+        <div class="container">
+            <div class="row-center">
+                <div class="col-md-6">
+                    <p class="mb-0">©2024. Refugio Corazon</p>
+                </div>
+                <div class="col-md-6 text-md-end">
+                    <div>
+                        <a href="https://www.facebook.com/?locale=es_LA"><i class='bx bxl-facebook-circle'></i></a>
+                        <a href="https://www.instagram.com/"><i class='bx bxl-instagram'></i></a>
+                        <a href="https://github.com/"><i class='bx bxl-github'></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- Botón de modo oscuro -->
+    <button id="darkModeToggle" class="floating-button">Modo Oscuro</button>
+
+    <script>
+        const darkModeToggle = document.getElementById('darkModeToggle');
+        darkModeToggle.addEventListener('click', () => {
+            document.body.classList.toggle('dark-mode');
+        });
+    </script>
+</body>
+</html>

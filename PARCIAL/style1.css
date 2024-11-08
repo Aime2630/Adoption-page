@@ -1,0 +1,655 @@
+*{ padding: 0; margin: 0; box-sizing: border-box; }
+
+body{
+    overflow-x: hidden;
+}
+
+h1{
+    font-family: "Dancing Script", serif;
+    font-optical-sizing: auto;
+    font-weight: 500;
+    font-style: normal;
+}
+
+.carousel-item img{
+    width: 100%;
+    height: 80vh;
+}
+
+.card-body img{
+    min-width: 50%;
+    max-height: 200px;
+}
+
+.header h1 {
+    font-size: 2em;
+    color: #4CAF50;
+}
+
+/* Estructura y fondo de la página */
+.donation-page {
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(135deg, #00e0fe, #daa457);
+    color: #333;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 40px 20px;
+    box-sizing: border-box;
+}
+
+/* Encabezado */
+.donation-header {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.donation-header h1 {
+    font-size: 2.5em;
+    color: #000000;
+    margin-bottom: 10px;
+}
+
+.donation-header p {
+    font-size: 1.1em;
+    color: #333;
+    max-width: 600px;
+}
+
+/* Sección de donación */
+.donation-section {
+    background: linear-gradient(135deg, #daa457, #00e0fe);
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    max-width: 450px;
+    width: 100%;
+    transition: transform 0.3s ease-in-out;
+}
+
+.donation-section:hover {
+    transform: scale(1.02);
+}
+
+.donation-section h2 {
+    color: #000000;
+    margin-bottom: 15px;
+}
+
+.donation-section p {
+    color: #000000;
+    font-size: 1em;
+    margin-bottom: 20px;
+}
+
+/* Botones de donación */
+.donation-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    justify-content: center;
+    margin-bottom: 25px;
+}
+
+.donation-btn {
+    background: linear-gradient(135deg, #5c67f2, #9d50ff);
+    color: #fff;
+    padding: 12px 25px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1.1em;
+    transition: background 0.4s, transform 0.2s;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.donation-btn:hover {
+    background: linear-gradient(135deg, #9d50ff, #5c67f2);
+    transform: translateY(-2px);
+}
+
+.other {
+    background: linear-gradient(135deg, #00e0fe, #00e0fe,);
+}
+
+.other:hover {
+    background: linear-gradient(135deg, #f09a1c, #f5b342);
+}
+
+/* Formulario de donación */
+#donation-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+}
+
+#custom-amount {
+    padding: 10px;
+    width: 80%;
+    max-width: 250px;
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    font-size: 1em;
+    text-align: center;
+    transition: border-color 0.3s;
+}
+
+#custom-amount:focus {
+    border-color: #5c67f2;
+}
+
+.donate-now {
+    background-color: #ff5e5e;
+    color: #fff;
+    padding: 12px 25px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1.2em;
+    transition: background 0.4s, transform 0.2s;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.donate-now:hover {
+    background-color: #ff3b3b;
+    transform: translateY(-2px);
+}
+
+/* Pie de página */
+.donation-footer {
+    font-size: 0.9em;
+    color: #666;
+    margin-top: 30px;
+    text-align: center;
+}
+
+/* Animación de corazón */
+.heart-animation {
+    font-size: 10rem;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    opacity: 0;
+    transition: opacity 0.3s, transform 0.7s;
+    pointer-events: none; 
+}
+
+.heart-animate {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1.5);
+    transition: transform 1s ease-in-out, opacity 1s;
+}
+
+.minimalist-btn {
+    display: inline-block; 
+    margin: 20px 0;
+    padding: 10px 20px;
+    font-size: 1.2rem;
+    background-color: #ff6f61;
+    color: white;
+    text-decoration: none; 
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.minimalist-btn:hover {
+    background-color: #ff4f3a;
+}
+
+/* Botones de monto */
+.btn-group .btn {
+    margin: 0 10px;
+}
+
+.btn-danger {
+    background-color: #ff6f61;
+    border-color: #ff6f61;
+    transition: background-color 0.3s;
+}
+
+.btn-danger:hover {
+    background-color: #ff4f3a;
+    border-color: #ff4f3a;
+}
+
+/* Campo de monto personalizado */
+input#custom-amount {
+    width: 300px;
+    margin: 0 auto;
+}
+
+/* CSS para la animación del corazón */
+.heart-animation {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(1); 
+    font-size: 5rem; 
+    opacity: 0;
+    color: red;
+    transition: opacity 0.5s ease;
+    z-index: 1000; 
+}
+
+.heart-animate {
+    animation: heartExpand 1.5s ease forwards;
+}
+
+/* Animación de expansión y desvanecimiento */
+@keyframes heartExpand {
+    0% {
+        transform: translate(-50%, -50%) scale(1);
+        opacity: 1;
+    }
+    50% {
+        transform: translate(-50%, -50%) scale(3); 
+        opacity: 1;
+    }
+    100% {
+        transform: translate(-50%, -50%) scale(1);
+        opacity: 0;
+    }
+}
+
+/* Animación para movimiento suave del degradado */
+@keyframes gradientShift {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* Efecto de bruma suave para un toque surrealista */
+.apadrinar-body::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle at 50% 50%, rgba(255, 255, 255, 0.3), transparent 70%);
+    mix-blend-mode: screen;
+    opacity: 0.8;
+    pointer-events: none;
+}
+
+/* Estilos para las imágenes del carrusel */
+.carousel-item img {
+    border-radius: 20px; 
+    padding: 5px; 
+    background: linear-gradient(135deg, #cfeff9), rgba(148, 202, 220, 0.5);
+    box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.1); 
+    transition: transform 0.3s ease; 
+}
+
+.carousel-item img:hover {
+    transform: scale(1.05); 
+}
+
+/* Efecto para el borde degradado alrededor de la imagen */
+.carousel-item {
+    position: relative;
+    overflow: hidden;
+}
+
+.carousel-item::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 20px;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 182, 193, 0.3), rgba(173, 216, 230, 0.3), rgba(255, 255, 255, 0.1));
+    pointer-events: none;
+    z-index: 1;
+}
+
+/* Estilo para el encabezado principal */
+.apadrinar-header h1 {
+    font-family: 'Poppins', sans-serif; 
+    font-size: 3rem; 
+    color: #eb7527; 
+    text-align: center;
+    background: linear-gradient(145deg, #f6e6e9, #ffccd5); 
+    padding: 20px 40px;
+    border-radius: 10px; 
+    box-shadow: 4px 4px 15px rgba(255, 254, 254, 0.422), -4px -4px 15px rgba(255, 255, 255, 0.5); 
+    position: relative;
+    display: inline-block; 
+}
+
+/* Efecto de capa de papel desgarrado */
+.apadrinar-header h1::before {
+    content: '';
+    position: absolute;
+    top: 10px;
+    left: -10px;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, #ffccd5, #f6e6e9);
+    z-index: -1;
+    transform: rotate(-3deg); 
+    border-radius: 15px;
+    box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.15);
+}
+
+/* Segunda capa de "papel" */
+.apadrinar-header h1::after {
+    content: '';
+    position: absolute;
+    bottom: -15px;
+    right: -15px;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, #fbe7e9, #ffe3e8);
+    z-index: -2;
+    transform: rotate(2deg);
+    border-radius: 15px;
+    box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Keyframes para la animación de desvanecimiento */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+/* Agregar la animación al cuerpo */
+.apadrinar-body {
+    animation: gradientShift 10s ease infinite;
+    background: linear-gradient(135deg, #daa457, #00e0fe);
+    background-size: 300% 300%; 
+}
+
+/* Estilos para el mensaje de agradecimiento */
+#thank-you-message {
+    display: none;
+    background-color: #ff6f61;
+    color: white;
+    font-size: 1.5rem;
+    padding: 15px;
+    border-radius: 10px;
+    position: fixed;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+    opacity: 0;
+    animation: showMessage 3s ease-in-out forwards;
+}
+
+/* Animación para mostrar el mensaje */
+@keyframes showMessage {
+    0% {
+        opacity: 0;
+        transform: translateX(-50%) translateY(20px);
+    }
+    50% {
+        opacity: 1;
+        transform: translateX(-50%) translateY(0);
+    }
+    100% {
+        opacity: 0;
+        transform: translateX(-50%) translateY(-20px);
+    }
+}
+
+
+/* Estilos del modal */
+.modal {
+    display: none; 
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.4); 
+    padding-top: 60px;
+}
+
+.modal-content {
+    background-color: white;
+    margin: 5% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    border-radius: 10px;
+    box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+.close {
+    color: #aaa;
+    font-size: 28px;
+    font-weight: bold;
+    position: absolute;
+    top: 10px;
+    right: 20px;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* Estilos para el botón que abre el modal en una esquina */
+.btn-open {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    padding: 8px 16px;
+    background-color: #FFBEA7;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1);
+    z-index: 1000; 
+}
+
+.btn-open:hover {
+    background-color: #f6e6e9;
+}
+
+/* Modificación del modal si es necesario */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.4);
+    padding-top: 60px;
+}
+
+/* Estilos del texto y lista dentro del modal */
+.modal h2 {
+    font-family: 'Poppins', sans-serif;
+    color: #333;
+}
+
+.modal ul {
+    font-size: 1rem;
+    color: #444;
+}
+
+.modal ul li {
+    margin: 10px 0;
+}
+
+
+.testimonios {
+    padding: 50px 0;
+    background-color: transparent;
+    text-align: center;
+}
+
+.section-title {
+    font-size: 2.5rem;
+    font-family: 'Poppins', sans-serif;
+    color: #eb7527;
+    margin-bottom: 30px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.testimonios-carousel {
+    display:flex;
+    justify-content: center;
+    gap: 20px;
+    overflow: hidden;
+    position: relative;
+}
+
+.testimonial-card {
+    background: transparent;
+    padding: 50px;
+    border-radius: 15px;
+    box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.1);
+    width: 400px;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+    opacity: 0.8;
+}
+
+/* Agrega la animación de visibilidad */
+.testimonial-card.visible {
+    opacity: 1;
+    transform: translateX(0); 
+    transition: opacity 0.10s ease, transform 0.10s ease;
+}
+
+.testimonial-card:hover {
+    transform: translateY(-10px);
+    opacity: 1;
+}
+
+.avatar {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    margin-bottom: 15px;
+    transition: transform 0.3s ease;
+}
+
+.testimonial-card:hover .avatar {
+    transform: scale(1.5);
+}
+
+.testimonial-text {
+    font-size: 1.1rem;
+    font-style: italic;
+    color: #555;
+    margin-bottom: 15px;
+}
+
+.user-name {
+    font-weight: bold;
+    color: #eb7527;
+    margin-bottom: 5px;
+}
+
+.user-position {
+    font-size: 0.9rem;
+    color: #777;
+}
+
+/* Animación de deslizamiento para las tarjetas */
+@keyframes slideIn {
+    0% {
+        transform: translateX(-50%);
+        opacity: 0;
+    }
+    100% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+.testimonios-carousel .testimonial-card {
+    animation: slideIn 0.5s ease-out forwards;
+}
+
+.testimonios-carousel .testimonial-card:nth-child(1) {
+    animation-delay: 0s;
+}
+
+.testimonios-carousel .testimonial-card:nth-child(2) {
+    animation-delay: 0.2s;
+}
+
+.testimonios-carousel .testimonial-card:nth-child(3) {
+    animation-delay: 0.4s;
+}
+
+/* Contenedor de la tarjeta */
+.flip-card {
+    perspective: 500px; 
+}
+
+.flip-card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transition: transform 0.4s;
+    transform-style: preserve-3d; 
+}
+
+.flip-card:hover .flip-card-inner {
+    transform: rotateY(180deg); 
+}
+
+.flip-card-front, .flip-card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden; 
+}
+
+.flip-card-front {
+    background-color: transparent;
+}
+
+.flip-card-back {
+    background-color: #f8f9fa;
+    transform: rotateY(180deg); 
+}
+
+.card-body {
+    padding: 20px;
+}
+
+/* Estilo minimalista para el botón */
+.btn-back {
+    position: fixed;
+    top: 10px;
+    left: 10px;
+    background-color: transparent;
+    border: none;
+    font-size: 16px;
+    color: #eb7527;
+    padding: 8px 16px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.btn-back:hover {
+    color: #007bff;
+}
+
+.btn-back:focus {
+    outline: none;
+}

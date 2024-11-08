@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Apadrina a un Amigo Peludo</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Librería de íconos de Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Estilos CSS personalizados -->
+    <link rel="stylesheet" href="style1.css">
+
+    
+    <link rel="icon" sizes="16x16" href="img/logo.png">
+    <link rel="icon" sizes="32x32" href="img/logo.png">
+    <link rel="icon" sizes="48x48" href="img/logo.png">
+    <link rel="icon" sizes="64x64" href="img/logo.png">
+    
+</head>
+<body class="apadrinar-body">
+
+    <a href="index.html" class="btn-back">
+        <i class="bi bi-arrow-left-circle"></i> 
+    </a>
+
+    <div class="container py-5">
+    <header class="apadrinar-header text-center mb-5">
+            <h1 class="apadrinar-h1">Apadrina a un Amigo Peludo</h1>
+            <p class="apadrinar-p text-dark">Tu apadrinamiento les brinda una vida mejor y les da esperanza.</p>
+    </header>
+
+    <div id="animalCarousel" class="carousel slide mb-5" data-bs-ride="carousel">
+            <div class="carousel-inner">
+                <!-- Slide 1 -->
+                <div class="carousel-item active">
+                    <img src="img/p1.jpg" class="d-block w-100" alt="Animal 1">
+                    <div class="carousel-caption d-none d-md-block">
+                        <h5>Max, el Juguetón</h5>
+                        <p>Un cachorro lleno de energía que ama los paseos al aire libre.</p>
+                        <button class="btn btn-danger">
+                            <a href="mailto:tu-email@dominio.com?subject=Apadrinamiento%20de%20Max" style="color: white; text-decoration: none;">Apadrina a Max</a>
+                        </button>
+                    </div>
+                </div>
+                <!-- Slide 2 -->
+                <div class="carousel-item">
+                    <img src="img/p2.jpg" class="d-block w-100" alt="Animal 2">
+                    <div class="carousel-caption d-none d-md-block">
+                        <h5>Luna, la Cariñosa</h5>
+                        <p>Una gatita muy dulce que adora los mimos y las siestas largas.</p>
+                        <button class="btn btn-danger">
+                            <a href="mailto:tu-email@dominio.com?subject=Apadrinamiento%20de%20Luna" style="color: white; text-decoration: none;">Apadrina a Luna</a>
+                        </button>
+                    </div>
+                </div>
+                <!-- Slide 3 -->
+                <div class="carousel-item">
+                    <img src="img/p3.jpg" class="d-block w-100" alt="Animal 3">
+                    <div class="carousel-caption d-none d-md-block">
+                        <h5>Bella, la Aventurera</h5>
+                        <p>Un perrito explorador que disfruta de las caminatas y la naturaleza.</p>
+                        <button class="btn btn-danger">
+                            <a href="mailto:tu-email@dominio.com?subject=Apadrinamiento%20de%20Bella" style="color: white; text-decoration: none;">Apadrina a Bella</a>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <!-- Controles de Carrusel -->
+            <button class="carousel-control-prev" type="button" data-bs-target="#animalCarousel" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Anterior</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#animalCarousel" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Siguiente</span>
+            </button>
+    </div>
+
+    <!-- Botón para abrir el modal -->
+    <button id="openModal" class="btn-open">Ver Políticas de Apadrinar</button>
+
+    <!-- Modal -->
+    <div id="policyModal" class="modal">
+        <div class="modal-content">
+            <span id="closeModal" class="close">&times;</span>
+            <h2>Políticas de Apadrinar</h2>            <ul>
+                <li>Compromiso con el bienestar de los animales.</li>
+                <li>Requisitos para apadrinar.</li>
+                <li>Beneficios y responsabilidades de los padrinos.</li>
+                <li>Proceso de actualización de los datos del apadrinamiento.</li>
+                <li>Condiciones de cancelación y cambios.</li>
+            </ul>
+        </div>
+    </div>
+    
+    <!-- Testimonios -->
+    <section class="testimonios">
+        <h2 class="section-title">Lo que dicen nuestros usuarios</h2>
+        <div class="testimonios-carousel">
+            <div class="testimonial-card">
+                <img src="img/s4.jpg" alt="Usuario 1" class="avatar">
+                <p class="testimonial-text">"Adoptar a mi perrofue la mejor decisión que tomé. El refugio fue increíblemente profesional y se aseguraron de que Max fuera el compañero perfecto para mí. Estoy agradecido por su dedicación y amor por los animales."</p>
+                <p class="user-name">Juan Pérez</p>
+                <p class="user-position">Florista</p>
+            </div>
+            <div class="testimonial-card">
+                <img src="img/s5.jpg" alt="Usuario 2" class="avatar">
+                <p class="testimonial-text">"Mi experiencia en el refugio fue maravillosa. No solo ayudaron a mi gata a encontrar un hogar, sino que también se aseguraron de que recibiera la atención médica que necesitaba antes de la adopción. ¡Es un lugar lleno de amor y esperanza!"</p>
+                <p class="user-name">Ana Gómez</p>
+                <p class="user-position">Emprendedora</p>
+            </div>
+            <div class="testimonial-card">
+                <img src="img/s6.jpg" alt="Usuario 3" class="avatar">
+                <p class="testimonial-text">"El refugio ha hecho un trabajo fenomenal brindando cuidados y apoyo a los animales necesitados. Mi perro llegó en un estado muy delicado, pero con la atención que recibió, ahora es un perro feliz y saludable. Estoy muy agradecido con todo el equipo."</p>
+                <p class="user-name">Carlos Ramírez</p>
+                <p class="user-position">Mecanico</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección Bento Box -->
+    <section id="bento-box" class="text-center my-5">
+        <h2 class="mb-4">Ellos tambien te necesitan</h2>
+        <div class="row">
+            <div class="col-md-4 mb-4">
+                <div class="card h-100 flip-card">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front">
+                            <img src="img/p7.jpg" class="card-img-top" alt="Donación">
+                            <div class="card-body">
+                                <h5 class="card-title">Una mascosta, es familia</h5>
+                                <p class="card-text">Despliega para conocer como ciento de persona en valencias se unen a su rescate.</p>
+                            </div>
+                        </div>
+                        <div class="flip-card-back">
+                            <div class="card-body">
+                                <h5 class="card-title">Unidos por ellos</h5>
+                                <p class="card-text">Cientos de personas se coordinan para rescatar a los animales afectados por la dana</p>
+                                <a href="https://www.elsaltodiario.com/valencia/cientos-personas-se-coordinan-rescatar-animales-afectados-dana" class="btn btn-danger">¡Conocer!</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 mb-4">
+                <div class="card h-100 flip-card">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front">
+                            <img src="img/p4.jpg" class="card-img-top" alt="Voluntariado">
+                            <div class="card-body">
+                                <h5 class="card-title">Conoce a Milo</h5>
+                                <p class="card-text">Despliega para conocer la triste historia de Milo!</p>
+                            </div>
+                        </div>
+                        <div class="flip-card-back">
+                            <div class="card-body">
+                                <h5 class="card-title">Salvemos a Milo</h5>
+                                <p class="card-text">Con tan solo cuatro meses le pasó por encima un tractor!</p>
+                                <a href="https://www.20minutos.es/noticia/5650750/0/fundacion-trifolium-busca-un-hogar-milo/" class="btn btn-danger">¡Conocer!</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 mb-4">
+                <div class="card h-100 flip-card">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front">
+                            <img src="img/p6.jpg" class="card-img-top" alt="Adopción">
+                            <div class="card-body">
+                                <h5 class="card-title">Gofio, paralítico tras un atropello</h5>
+                                <p class="card-text">Este no es lugar para un perrito en silla de ruedas!</p>
+                            </div>
+                        </div>
+                        <div class="flip-card-back">
+                            <div class="card-body">
+                                <h5 class="card-title">Necesita un hogar</h5>
+                                <p class="card-text">La asociación AANIPAL busca una casa de acogida hasta que encuentren al adoptante perfecto para él.</p>
+                                <a href="https://www.20minutos.es/noticia/5647792/0/gofio-un-perro-paralitico-que-vive-un-refugio-necesita-un-hogar/" class="btn btn-danger">¡Conocer!</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Bootstrap JS y dependencias -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Script JavaScript personalizado -->
+    <script src="script.js"></script>
+    <script>
+
+        function enterCustomAmount() {
+            document.getElementById("custom-amount").style.display = "block";
+            selectedAmount = null;
+        }
+
+        function toggleMinimalist() {
+            alert('Gracias por tu apoyo a los animales. ¡Vuelve pronto!');
+        }
+
+        function sponsorNow() {
+            let sponsorButton = document.getElementById('sponsor-button');
+            sponsorButton.classList.add('active'); 
+
+            let thankYouMessage = document.getElementById('thank-you-message');
+            thankYouMessage.style.display = 'block';
+
+            setTimeout(function() {
+                thankYouMessage.style.display = 'none';
+            }, 3000);
+        }
+
+        var modal = document.getElementById("policyModal");
+
+        var btn = document.getElementById("openModal");
+
+        var span = document.getElementById("closeModal");
+
+        btn.onclick = function() {
+            modal.style.display = "block";
+        }
+
+        span.onclick = function() {
+            modal.style.display = "none";
+        }
+
+        window.onclick = function(event) {
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
+        }
+
+        const scrollContents = document.querySelectorAll('.scroll-content');
+
+        function checkScroll() {
+            const triggerBottom = window.innerHeight / 5 * 4; 
+
+            scrollContents.forEach(content => {
+                const contentTop = content.getBoundingClientRect().top;
+
+                if(contentTop < triggerBottom) {
+                    content.style.opacity = 1;
+                    content.style.transform = 'translateY(0)'; 
+                    content.classList.add('active');
+                } else {
+                    content.style.opacity = 0;
+                    content.style.transform = 'translateY(50px)'; 
+                }
+            });
+        }
+
+        window.addEventListener('scroll', checkScroll);
+
+        checkScroll();
+
+    window.addEventListener('scroll', function() {
+    const testimonios = document.querySelectorAll('.testimonial-card');
+    const scrollPosition = window.innerHeight + window.scrollY;
+
+    testimonios.forEach(testimonial => {
+        const testimonialPosition = testimonial.offsetTop;
+
+        if (scrollPosition > testimonialPosition + 150) {
+            testimonial.classList.add('visible');
+        } else {
+            testimonial.classList.remove('visible');
+        }
+    });
+});
+
+document.querySelectorAll('.testimonial-card').forEach(testimonial => {
+    testimonial.style.opacity = '0';
+    testimonial.style.transform = 'translateX(-50%)'; 
+});
+
+    </script>
+</body>
+</html>
